@@ -1,6 +1,6 @@
 '''
 IMPROVEMENTS
-
+- README file
 - List number of files in tabular format and display if they're a folder or
   file (search feature AND list items feature)
 - Improve menu: Return to menu page and clear os after each function
