@@ -1,3 +1,13 @@
+'''
+IMPROVEMENTS
+
+- Recursive functions for bytesize and number of files
+- List number of files in tabular format and display if they're a folder or
+  file
+- Improve menu: Return to menu page and clear os after each function
+- Clean up with main() and module scripts
+'''
+
 import os
 
 def list_current_working_directory():
@@ -18,9 +28,8 @@ def move_down():
     '''
     Moves down one directory based on user input
     '''
-    print()    # Newline for formatting
 
-    new_directory = input('Enter directory: ')
+    new_directory = input('\nEnter directory: ')
 
     if os.path.exists(new_directory):    # Checking is the directory exists
         os.chdir(new_directory)    # Changing to the directory if it exists
@@ -67,9 +76,8 @@ def filename_search():
     Searth the cwd for items matching a user's input, then printing the names of
     any such items
     '''
-    print()    # Newline for formatting
 
-    filename = input('Enter filename: ').strip()
+    filename = input('\nEnter filename: ').strip()
     items = []    # Empty list to contain files containing the user input
     item_list = os.listdir(os.getcwd())    # Create a list of files in the cwd
 
@@ -134,7 +142,7 @@ while program_running:
 
     elif user_choice == '6':
         print_number_of_bytes()
-        
+
     elif user_choice == '7':
         filename_search()
     
