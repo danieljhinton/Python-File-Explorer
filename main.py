@@ -10,7 +10,7 @@ IMPROVEMENTS
 
 import os
 
-def list_current_working_directory():
+def print_current_working_directory():
     '''
     Prints the current working directory
     '''
@@ -37,7 +37,7 @@ def move_down():
         print('\nError - Directory not found')    # Error message if it doesn't
 
 
-def print_number_of_files():
+def print_number_of_items():
     '''
     Print the number of total items, files and folders in the current directory
     '''
@@ -57,7 +57,7 @@ def print_number_of_files():
     print(f'\nNumber of files: {file_count}')
 
 
-def print_recursive_number_of_files(dir_path):
+def print_recursive_number_of_items(dir_path):
     '''
     Return the total number of items both in the current working directory AND
     all subdirectories
@@ -72,7 +72,7 @@ def print_recursive_number_of_files(dir_path):
         if os.path.isfile(item_path):
             item_count += 1
         else:
-            item_count += print_recursive_number_of_files(item_path)
+            item_count += print_recursive_number_of_items(item_path)
 
     return item_count
 
@@ -91,7 +91,7 @@ def print_number_of_bytes():
     print(f'\nNumber of bytes in current directory: {byte_count}')
 
 
-def filename_search():
+def search():
     '''
     Searth the cwd for items matching a user's input, then printing the names of
     any such items
@@ -116,7 +116,7 @@ def filename_search():
         print(f"\nNo files found matching '{filename}'")
 
 
-def list_files():    # List all the items in the cwd
+def list_items():    # List all the items in the cwd
     print('\ITEMS: \n')
     for i in os.listdir(os.getcwd()):
         print(i)
@@ -147,7 +147,7 @@ while program_running:
     user_choice = input('Enter a number: ').strip()
 
     if user_choice == '1':
-        list_current_working_directory()
+        print_current_working_directory()
 
     elif user_choice == '2':
         move_up()
@@ -156,21 +156,21 @@ while program_running:
         move_down()
 
     elif user_choice == '4':
-        print_number_of_files()
+        print_number_of_items()
 
     elif user_choice == '5':
-        number_of_items = print_recursive_number_of_files(os.getcwd())
+        number_of_items = print_recursive_number_of_items(os.getcwd())
         print(f'Number of items in current working directory (incl.\
 subdirectories): {number_of_items}')
 
     elif user_choice == '6':
-        print_number_of_files()
+        list_items()
 
     elif user_choice == '7':
         print_number_of_bytes()
 
     elif user_choice == '8':
-        filename_search()
+        search()
     
     elif user_choice == '9':
         print('\nEXITING PROGRAM\n')
