@@ -115,13 +115,16 @@ def search():
         print(f"\nNo files found matching '{filename}'")
 
 
-def list_items():    # List all the items in the cwd
+def list_items():
+    '''
+    List all the items in the cwd
+    '''
     print('\nITEMS: \n')
     for i in os.listdir(os.getcwd()):
         print(i)
 
 
-menu = '''
+MENU = '''
 1  List the current working directory
 2  Move up
 3  Move down
@@ -138,10 +141,10 @@ menu = '''
 
 program_running = True
 
-print(menu)
+print(MENU)
 
 while program_running:
-    
+
     print('\n' + os.getcwd() + '\n')
     user_choice = input('Enter a number: ').strip()
 
@@ -170,7 +173,7 @@ subdirectories): {number_of_items}')
 
     elif user_choice == '8':
         search()
-    
+
     elif user_choice == '9':
         print('\nEXITING PROGRAM\n')
         program_running = False
