@@ -52,7 +52,7 @@ def print_number_of_items():
         else:
             folder_count += 1
 
-    print(f'\nNumber of items in current directory: {len(file_list)}')
+    print(f'\nNumber of items in current directory: {len(item_list)}')
     print(f'\nNumber of folders: {folder_count}')
     print(f'\nNumber of files: {file_count}')
 
