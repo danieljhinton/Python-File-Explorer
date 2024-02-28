@@ -117,7 +117,7 @@ def search():
 
 
 def list_items():    # List all the items in the cwd
-    print('\ITEMS: \n')
+    print('\nITEMS: \n')
     for i in os.listdir(os.getcwd()):
         print(i)
 
