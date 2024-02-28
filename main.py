@@ -41,12 +41,12 @@ def print_number_of_items():
     '''
     Print the number of total items, files and folders in the current directory
     '''
-    file_list = os.listdir(os.getcwd())    # Create a list of items in the cwd
+    item_list = os.listdir(os.getcwd())    # Create a list of items in the cwd
 
     folder_count = 0
     file_count = 0
 
-    for i in file_list:    # Iterating over the list of items
+    for i in item_list:    # Iterating over the list of items
         if os.path.isfile(i):
             file_count += 1
         else:
