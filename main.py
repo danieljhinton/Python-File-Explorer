@@ -88,7 +88,7 @@ def print_number_of_bytes():
     for i in item_list:
         byte_count += os.path.getsize(i)
 
-    print(f'\nNumber of bytes in current directory: {byte_count}')
+    print(f'\nSize of current directory: {byte_count:,} bytes')
 
 
 def search():
