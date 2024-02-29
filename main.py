@@ -4,7 +4,7 @@ IMPROVEMENTS
 - List number of files in tabular format and display if they're a folder or
   file (search feature AND list items feature)
 - Improve menu: Return to menu page and clear os after each function
-- Clean up with main() and module scripts
+- Clean up with module scripts
 '''
 
 import os
@@ -139,44 +139,50 @@ MENU = '''
 
 # Main program logic
 
-program_running = True
 
-print(MENU)
+def main():
 
-while program_running:
+    program_running = True
 
-    print('\n' + os.getcwd() + '\n')
-    user_choice = input('Enter a number: ').strip()
+    print(MENU)
 
-    if user_choice == '1':
-        print_current_working_directory()
+    while program_running:
 
-    elif user_choice == '2':
-        move_up()
+        print('\n' + os.getcwd() + '\n')
+        user_choice = input('Enter a number: ').strip()
 
-    elif user_choice == '3':
-        move_down()
+        if user_choice == '1':
+            print_current_working_directory()
 
-    elif user_choice == '4':
-        print_number_of_items()
+        elif user_choice == '2':
+            move_up()
 
-    elif user_choice == '5':
-        number_of_items = print_recursive_number_of_items(os.getcwd())
-        print(f'\nNumber of items in current working directory (incl.\
-subdirectories): {number_of_items}')
+        elif user_choice == '3':
+            move_down()
 
-    elif user_choice == '6':
-        list_items()
+        elif user_choice == '4':
+            print_number_of_items()
 
-    elif user_choice == '7':
-        print_number_of_bytes()
+        elif user_choice == '5':
+            number_of_items = print_recursive_number_of_items(os.getcwd())
+            print(f'\nNumber of items in current working directory (incl.\
+    subdirectories): {number_of_items}')
 
-    elif user_choice == '8':
-        search()
+        elif user_choice == '6':
+            list_items()
 
-    elif user_choice == '9':
-        print('\nEXITING PROGRAM\n')
-        program_running = False
+        elif user_choice == '7':
+            print_number_of_bytes()
 
-    else:
-        print('\nInvalid input')
+        elif user_choice == '8':
+            search()
+
+        elif user_choice == '9':
+            print('\nEXITING PROGRAM\n')
+            program_running = False
+
+        else:
+            print('\nInvalid input')
+
+if __name__ == '__main__':
+    main()
