@@ -157,7 +157,7 @@ def main():
         elif user_choice == '5':
             number_of_items = print_recursive_number_of_items(os.getcwd())
             print(f'\nNumber of items in current working directory (incl.\
-subdirectories): {number_of_items}')
+subdirectories): {number_of_items:,}')
 
         elif user_choice == '6':
             list_items()
