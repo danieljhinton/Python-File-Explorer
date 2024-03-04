@@ -1,12 +1,3 @@
-'''
-IMPROVEMENTS
-- README file
-- List number of files in tabular format and display if they're a folder or
-  file (search feature AND list items feature)
-- Improve menu: Return to menu page and clear os after each function
-- Clean up with module scripts
-'''
-
 import os
 
 def print_current_working_directory():
@@ -166,7 +157,7 @@ def main():
         elif user_choice == '5':
             number_of_items = print_recursive_number_of_items(os.getcwd())
             print(f'\nNumber of items in current working directory (incl.\
-    subdirectories): {number_of_items}')
+subdirectories): {number_of_items}')
 
         elif user_choice == '6':
             list_items()
